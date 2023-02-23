@@ -1,11 +1,10 @@
 # MLflow + scikit-learn + gridsearch base code
 
-This is base project to track, reproduce and versioning experiments which implements a gridsearch of parameter in tree bases models from scikit-learn and log the results with mlops.
+This is base project to track, reproduce and versioning experiments. This implements a gridsearch on hiper parameters of a collection of tree based models from scikit-learn + xgboost, train and test and log the results with MLflow.
  
 ## Installation
 ### Prerequisites
-* A realsense camera.
-* Python installed.
+* Docker installed.
 
 run:
 `docker build -t mlops:latest .`
