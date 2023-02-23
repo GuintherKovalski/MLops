@@ -13,7 +13,7 @@ run:
 
 Edit the configuration file in `data/hiper_parameters/parameters.json` to use different parameters/models.
 
-Edit the configuration file in `data/configurations/configurations.json` with the **experiment name** you are bout to run.
+Edit the configuration file in `data/configurations/configurations.json` with the **experiment name** you are about to run.
 
 run `bash run_container.sh`
 
