@@ -5,10 +5,18 @@ warnings.filterwarnings("ignore")
 
 class GridSeach:
     def __init__(self) -> None:
+        
+        '''
+            Classe dedicada a criar todas as combinações 
+            de hiper parametros
+
+        '''
+
+
         f = open('hiper_parameters/data.json')
         self.data = json.load(f)
 
-    def generate_hiper_parameters_list(self,model_name) ->(list,list,list):
+    def generate_hiper_parameters_list(self, model_name:str ) -> (list,list,list):
 
         hiper_parameters = list()
         parameters_names = list() 
@@ -24,13 +32,10 @@ class GridSeach:
         for model_name in self.data:
             yield self.generate_hiper_parameters_list(model_name)
 
-    def iterate_by_name(self,model_name):
+    def iterate_by_name(self,model_name:str) -> dict:
         model_name_,parameters_names_, hiper_parameters_ = self.generate_hiper_parameters_list(model_name)
         
         for parameter_values in hiper_parameters_:
-
-            
-
             test_case = {name:param for name,param in zip(parameters_names_,parameter_values)}
                 
             yield test_case
@@ -39,8 +44,11 @@ class GridSeach:
     def generate_parameter(self):
         for model_name,parameters_names, hiper_parameters in self.iterate_on_all_parameters():
             for parameter_values in hiper_parameters:
-                test_case = {name:param for name,param in zip(parameters_names,parameter_values)} 
-                
+                test_case = { name:param for name,param in zip(parameters_names,parameter_values) } 
                 yield model_name,test_case
 
 
+if __name__ == "main":
+
+    gridSeach = GridSeach()
+    print(gridSeach.data)
