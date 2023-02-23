@@ -1,9 +1,9 @@
 
 import mlflow
 import time
-
+import json
 class Hiper:
-    f = open('hiper_parameters/data.json')
+    f = open('data/configurations/configurations.json')
     parameters = json.load(f)
 
 class MlFlow:

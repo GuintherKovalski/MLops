@@ -1,6 +1,4 @@
-{
-    "Experiment Name": "Tree gridsearch 0.0.1",
-    
+{    
     "DecisionTreeClassifier":
     {
         "max_depth":         [3,4,5,10],

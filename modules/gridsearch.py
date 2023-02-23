@@ -13,7 +13,7 @@ class GridSeach:
         '''
 
 
-        f = open('hiper_parameters/data.json')
+        f = open('data/hiper_parameters/parameters.json')
         self.data = json.load(f)
 
     def generate_hiper_parameters_list(self, model_name:str ) -> (list,list,list):
@@ -24,6 +24,7 @@ class GridSeach:
         for parameter_name in self.data[model_name]:
 
             parameters_names.append( parameter_name )
+            print("self.data[model_name]",model_name,parameter_name,self.data[model_name])
             hiper_parameters.append( tuple(self.data[model_name][parameter_name]))
         
         return model_name,parameters_names,list(itertools.product(*hiper_parameters))
