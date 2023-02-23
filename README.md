@@ -20,8 +20,11 @@ run `bash run_container.sh`
 visualize results in `results/[experiment_name].csv` or run `sudo docker run -it --privileged -v $(pwd):/home --network host mlops:latest mlflow ui` and acess
 
 Create a tag for the experiment e.g:
+
     `git add results/*git data/*` 
+
     `git tag -a v0.0.1 -m "grid search in tree based models"`
+
     `git push origin v0.0.1`
 
 
