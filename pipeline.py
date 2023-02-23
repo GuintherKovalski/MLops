@@ -47,6 +47,7 @@ class Pipeline:
                 metrics = self.validate.eval(model,X_test,X_train,y_train,y_test)
                 self.mlFlow.log_result(parameter,metrics)
 
+        self.mlFlow.save_results()
 
 
 if __name__ == "__main__":
