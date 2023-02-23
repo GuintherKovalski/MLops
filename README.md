@@ -21,8 +21,9 @@ visualize results in `results/[experiment_name].csv` or run `sudo docker run -it
 
 Create a tag for the experiment e.g:
 
-    git add results/*git data/* 
-    git tag -a v0.0.1 -m "grid search in tree based models"
+    git add results/* data/*
+    git commit -m "results from base parameters"
+    git tag -a v0.0.1 -m "results from base parameters"
     git push origin v0.0.1
 
 
